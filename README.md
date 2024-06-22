@@ -57,7 +57,12 @@ cp blink.uf2 </path/to/pico>
 ----
 # FREE-RTOS Issue
 
-Currently (Jun 22, 2024) freertos is not working correctly with the rpi pico since release V11.1.0.
+### TLDR
+**Use FreeRTOS V11.0.1** (commit: 0240cd5) instead of V11.1.0 (commit: dbf7055) by running `git checkout 0240cd5` in `FreeRTOS-Kernel` folder
+
+----
+
+Currently (Jun 22, 2024) freertos is not working correctly with the rpi pico since release V11.1.0 (commit: dbf7055).
 
 When trying to build the project will get this error
 ```
@@ -69,7 +74,7 @@ when doing so by adding `#define configENABLE_MPU 0` or `#define configENABLE_MP
 tasks.c:(privileged_functions+0xecc): undefined reference to `vClearInterruptMask'
 ```
 
-This issue can be avoided by using and older version of FreeRTOS: V11.0.1 (commit: 0240cd5)
+This issue can be avoided by **using the older version of FreeRTOS: V11.0.1 (commit: 0240cd5)**
 
 You can just checkout the correct version by running:
 ```bash
