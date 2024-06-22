@@ -10,18 +10,9 @@ cd rp2040-freertos
 ```
 
 ## 2. Adding necessary libraries
-This can be done manually ([2.2](#22-adding-the-necessary-libaries-manually2.2)) or by using git submodules ([2.1](#))
+We need to add the PICO-SDK and FreeRTOS to the project.
 
-### 2.1 Adding the necessary libaries using git submodules
-```bash
-git submodule update --init --recursive
-export PICO_SDK_PATH=$PWD/lib/pico-sdk
-```
-
-### 2.2 Adding the necessary libaries manually
-We just clone the repositories into the main folder, just like in the video
-
-#### 2.2.1 Add PICO-SDK
+### 2.1 Add PICO-SDK
 This is dependend on your setup. If you have the PICO-SDK installed, you may need to add the path to the `PICO_SDK_PATH` to point to the location of the SDK.
 
 ```bash
@@ -37,7 +28,7 @@ export PICO_SDK_PATH=$PWD/pico-sdk
 You may also need to install the toolchain. You can find the instructions for that in [original video](https://www.youtube.com/watch?v=JhajoAyP8e4) or in the [getting-started PDF](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
 
 
-#### 2.2.2 Adding FreeRTOS
+### 2.2 Adding FreeRTOS
 ```bash
 git clone https://github.com/FreeRTOS/FreeRTOS-Kernel
 cd FreeRTOS-Kernel
